@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.containerBuscaAluno {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RetanguloBrancoFundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    background-color: #006FB7;
+    border-radius: 2rem;
+    z-index: 1;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+}
+
+.conteudo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem 1.5rem 2rem;
+    overflow: hidden;
+}
+
+.Titulo {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+.Subtitulo {
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.containerBusca {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.campoBusca {
+    position: relative;
+    width: 100%;
+}
+
+.campoBusca input {
+    width: 100%;
+    height: 4rem;
+    border-radius: 1rem;
+    border: 4px solid #6E5AAF;
+    background-color: white;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding: 0 4rem 0 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.campoBusca input::placeholder {
+    color: #999;
+}
+
+.campoBusca input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(162, 213, 95, 0.3);
+}
+
+.botaoBusca {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #006FB7;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.botaoBusca:hover {
+    background-color: #005a94;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.campoFiltro {
+    width: 100%;
+}
+
+.campoFiltro select {
+    width: 100%;
+    height: 4rem;
+    border-radius: 1rem;
+    border: 4px solid #6E5AAF;
+    background-color: white;
+    color: #999;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0 3rem 0 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+}
+
+.campoFiltro select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(162, 213, 95, 0.3);
+}
+
+.campoFiltro select option {
+    background-color: white;
+    color: #333;
+    padding: 0.5rem;
+}
+
+.containerCards {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    overflow-y: auto;
+    flex: 1;
+    padding-right: 0.5rem;
+}
+
+.containerCards::-webkit-scrollbar {
+    width: 8px;
+}
+
+.containerCards::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.containerCards::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.containerCards::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.cardAluno {
+    background-color: #A2D55F;
+    border-radius: 1.2rem;
+    border: 4px solid #6E5AAF;
+    padding: 0.6rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.cardAluno:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.fotoAluno {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #6E5AAF;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fotoAluno img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.infoAluno {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem 1rem;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.labelInfo {
+    color: #333;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    line-height: 1;
+}
+
+.valorInfo {
+    color: #333;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.SullivanDecoracao {
+    background-image: url(sulivanfita.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 21.75rem;
+    height: 36.25rem;
+    flex-shrink: 0;
+    aspect-ratio: 3/5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.MikeDecoracao {
+    background-image: url('mikeFita.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 27.75rem;
+    height: 49.8125rem;
+    max-height: 100vh;
+    flex-shrink: 0;
+    aspect-ratio: 492 / 797;
+    z-index: 9999;
+    pointer-events: none;
+    margin: 0;
+}
+
+.VoltarHome {
+    display: block;
+    background-image: url(HomePage.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2.3125rem;
+    height: 1.9375rem;
+    flex-shrink: 0;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999999999;
+}
+
+.Voltar {
+    display: block;
+    background-image: url(BackTo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2.3125rem;
+    height: 1.9375rem;
+    flex-shrink: 0;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999999999;
+}
+
+/* Media Queries para Responsividade */
+
+/* Telas grandes (1200px - 1400px) */
+@media (max-width: 1400px) {
+    .SullivanDecoracao {
+        width: 19rem;
+        height: 31.67rem;
+    }
+
+    .MikeDecoracao {
+        width: 24rem;
+        height: 43.08rem;
+    }
+}
+
+/* Tablets e telas médias (768px - 1200px) */
+@media (max-width: 1200px) {
+    .SullivanDecoracao {
+        width: 16rem;
+        height: 26.67rem;
+    }
+
+    .MikeDecoracao {
+        width: 20rem;
+        height: 35.9rem;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 2rem;
+        height: 1.67rem;
+    }
+}
+
+/* Tablets pequenos (600px - 768px) */
+@media (max-width: 768px) {
+    .Titulo {
+        font-size: 1.8rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.9rem;
+    }
+
+    .containerBusca {
+        max-width: 90%;
+    }
+
+    .infoAluno {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem 1rem;
+    }
+
+    .cardAluno {
+        padding: 1rem;
+    }
+
+    .fotoAluno {
+        width: 60px;
+        height: 60px;
+    }
+
+    .SullivanDecoracao {
+        width: 13rem;
+        height: 21.67rem;
+        opacity: 0.9;
+    }
+
+    .MikeDecoracao {
+        width: 16rem;
+        height: 28.72rem;
+        opacity: 0.9;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.8rem;
+        height: 1.5rem;
+        top: 15px;
+    }
+
+    .VoltarHome {
+        right: 15px;
+    }
+
+    .Voltar {
+        left: 15px;
+    }
+}
+
+/* Smartphones (480px - 600px) */
+@media (max-width: 600px) {
+    .Titulo {
+        font-size: 1.5rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.85rem;
+    }
+
+    .SullivanDecoracao {
+        width: 10rem;
+        height: 16.67rem;
+        opacity: 0.85;
+    }
+
+    .MikeDecoracao {
+        width: 12rem;
+        height: 21.54rem;
+        opacity: 0.85;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.6rem;
+        height: 1.33rem;
+    }
+}
+
+/* Smartphones pequenos (menos de 480px) */
+@media (max-width: 480px) {
+    .cardAluno {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .fotoAluno {
+        margin: 0 auto;
+    }
+
+    .infoAluno {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .Titulo {
+        font-size: 1.3rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.8rem;
+    }
+
+    .SullivanDecoracao {
+        width: 8rem;
+        height: 13.33rem;
+        opacity: 0.8;
+    }
+
+    .MikeDecoracao {
+        width: 10rem;
+        height: 17.95rem;
+        opacity: 0.8;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.5rem;
+        height: 1.25rem;
+        top: 12px;
+    }
+
+    .VoltarHome {
+        right: 12px;
+    }
+
+    .Voltar {
+        left: 12px;
+    }
+}
+
+/* Smartphones muito pequenos (menos de 375px) */
+@media (max-width: 375px) {
+    .Titulo {
+        font-size: 1.1rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.75rem;
+    }
+
+    .SullivanDecoracao {
+        width: 6.5rem;
+        height: 10.83rem;
+        opacity: 0.75;
+    }
+
+    .MikeDecoracao {
+        width: 8rem;
+        height: 14.36rem;
+        opacity: 0.75;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.3rem;
+        height: 1.08rem;
+        top: 10px;
+    }
+
+    .VoltarHome {
+        right: 10px;
+    }
+
+    .Voltar {
+        left: 10px;
+    }
+
+    .campoBusca input,
+    .campoFiltro select {
+        height: 3.5rem;
+        font-size: 0.85rem;
+    }
+}

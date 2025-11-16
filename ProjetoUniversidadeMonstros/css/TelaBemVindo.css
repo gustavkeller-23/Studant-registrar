@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFF;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Titulo {
+  width: 37.75rem;
+  color: #006FB7;
+  text-align: center;
+  font-family: "Bebas Neue";
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: -5px;
+}
+
+.Subtitulo {
+  width: 37.75rem;
+  color: #87859B;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+
+.botaoMatricularAluno,
+.botaoListarAluno {
+  width: 16rem;
+  height: 4rem;
+  border-radius: 1.3125rem;
+  border: 7px solid #6E5AAF;
+  color: #FFF;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.botaoMatricularAluno {
+  background: #006FB7;
+}
+
+.botaoListarAluno {
+  background: #A4D65E;
+}
+
+.botaoListarAluno:hover,
+.botaoMatricularAluno:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.ContainerCadastrarAluno {
+  position: absolute;
+  top: 50%;
+  left: -25%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 40px 20px;
+  gap: 15px; 
+}
+
+.grupoBotoes {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+
+.ImgDecorativa {
+  background-image: url(ImgDecorativaBemVindo.png);
+  width: 54.75rem;
+  height: 30.8125rem;
+  flex-shrink: 0;
+  aspect-ratio: 876/493;
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+}
+
+.EfeitoFundoBemVindo {
+  background-image: url(efeitoFundoBemVindo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw; 
+  height: 42rem; 
+  flex-shrink: 0;
+  position: fixed; 
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1; 
+}
+
+/* Media Queries para Responsividade */
+
+/* Telas grandes (1200px - 1400px) */
+@media (max-width: 1400px) {
+  .ImgDecorativa {
+    width: 45rem;
+    height: 25.3125rem;
+  }
+  
+  .EfeitoFundoBemVindo {
+    height: 38rem;
+  }
+}
+
+/* Tablets e telas médias (768px - 1200px) */
+@media (max-width: 1200px) {
+  .Titulo {
+    width: 90%;
+    font-size: 2.2rem;
+  }
+  
+  .Subtitulo {
+    width: 90%;
+    font-size: 1.3rem;
+    margin-top: 40px;
+  }
+  
+  .ContainerCadastrarAluno {
+    left: -15%;
+  }
+  
+  .ImgDecorativa {
+    width: 38rem;
+    height: 21.4rem;
+  }
+  
+  .EfeitoFundoBemVindo {
+    height: 33rem;
+  }
+  
+  .botaoMatricularAluno,
+  .botaoListarAluno {
+    width: 14rem;
+    height: 3.5rem;
+    font-size: 1.1rem;
+    border: 6px solid #6E5AAF;
+  }
+}
+
+/* Tablets pequenos (600px - 768px) */
+@media (max-width: 768px) {
+  .Titulo {
+    width: 95%;
+    font-size: 1.8rem;
+  }
+  
+  .Subtitulo {
+    width: 95%;
+    font-size: 1.1rem;
+    margin-top: 30px;
+  }
+  
+  .ContainerCadastrarAluno {
+    left: 0;
+    transform: translate(0, -50%);
+    padding: 30px 15px;
+  }
+  
+  .ImgDecorativa {
+    width: 28rem;
+    height: 15.8rem;
+    right: -5%;
+  }
+  
+  .EfeitoFundoBemVindo {
+    height: 28rem;
+  }
+  
+  .botaoMatricularAluno,
+  .botaoListarAluno {
+    width: 12rem;
+    height: 3.2rem;
+    font-size: 1rem;
+    border: 5px solid #6E5AAF;
+  }
+  
+  .grupoBotoes {
+    margin-top: 20px;
+    gap: 12px;
+  }
+}
+
+/* Smartphones (480px - 600px) */
+@media (max-width: 600px) {
+  .Titulo {
+    width: 95%;
+    font-size: 1.5rem;
+  }
+  
+  .Subtitulo {
+    width: 95%;
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+  
+  .ContainerCadastrarAluno {
+    padding: 20px 10px;
+    gap: 10px;
+  }
+  
+  .ImgDecorativa {
+    width: 22rem;
+    height: 12.4rem;
+    right: -8%;
+    opacity: 0.9;
+  }
+  
+  .EfeitoFundoBemVindo {
+    height: 22rem;
+  }
+  
+  .botaoMatricularAluno,
+  .botaoListarAluno {
+    width: 11rem;
+    height: 3rem;
+    font-size: 0.95rem;
+    border: 4px solid #6E5AAF;
+  }
+  
+  .grupoBotoes {
+    margin-top: 15px;
+    gap: 10px;
+  }
+}
+
+/* Smartphones pequenos (menos de 480px) */
+@media (max-width: 480px) {
+  .Titulo {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 0 10px;
+  }
+  
+  .Subtitulo {
+    width: 100%;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+  
+  .ContainerCadastrarAluno {
+    padding: 15px 10px;
+    gap: 8px;
+  }
+  
+  .ImgDecorativa {
+    width: 18rem;
+    height: 10.15rem;
+    right: -10%;
+    opacity: 0.85;
+  }
+  
+  .EfeitoFundoBemVindo {
+    height: 18rem;
+  }
+  
+  .botaoMatricularAluno,
+  .botaoListarAluno {
+    width: 10rem;
+    height: 2.8rem;
+    font-size: 0.9rem;
+    border: 3px solid #6E5AAF;
+  }
+  
+  .grupoBotoes {
+    margin-top: 10px;
+    gap: 8px;
+  }
+}
+
+/* Smartphones muito pequenos (menos de 375px) */
+@media (max-width: 375px) {
+  .Titulo {
+    font-size: 1.1rem;
+  }
+  
+  .Subtitulo {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+  
+  .ImgDecorativa {
+    width: 15rem;
+    height: 8.45rem;
+    right: -8%;
+    opacity: 0.8;
+  }
+  
+  .EfeitoFundoBemVindo {
+    height: 16rem;
+  }
+  
+  .botaoMatricularAluno,
+  .botaoListarAluno {
+    width: 9rem;
+    height: 2.5rem;
+    font-size: 0.85rem;
+    border: 3px solid #6E5AAF;
+  }
+}

@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #006FB7;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ContainerLogar {
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 37.75rem;
+  text-align: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1002;
+}
+
+.Logo {
+  background-image: url('LogoUniversidadeMonstro.png');
+  width: 8.5rem;
+  height: 8.5rem;
+  margin: 0 auto 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.formEntrar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.campo-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.input-personalizado {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.input-personalizado input {
+  width: 16rem;
+  height: 4rem;
+  border-radius: 1.3125rem;
+  border: 7px solid #006FB7;
+  background-color: #FFF;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.input-personalizado input::placeholder {
+  color: #87859B;;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.input-personalizado input:focus {
+  outline: none;
+  transform: scale(1.02);
+}
+
+.input-personalizado input:focus::placeholder {
+  opacity: 0.5;
+}
+
+.botaoEntrar {
+  width: 16rem;
+  height: 4rem;
+  border-radius: 1.3125rem;
+  border: none;
+  background-color: #006FB7;
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.botaoEntrar:hover {
+  background-color: #005a94;
+  transform: scale(1.02);
+}
+
+.conteudoInterno {
+  margin-top: 5rem; /* ajuste conforme necessário */
+}
+
+.ImagemTelaLogin {
+  background-image: url(loginImg.png);
+  width: 50rem;
+  height: 30rem;
+  background-size: cover; /* preenche todo o espaço */
+  background-repeat: no-repeat;
+  background-position: bottom left; /* alinha com a borda inferior e esquerda */
+  position: fixed;
+  bottom: 0;
+  left: 5%;
+  z-index: 1001;
+}
+
+.Titulo {
+  position: absolute;
+  top: 1rem;       /* distância da borda superior */
+  left: 15rem;      /* distância da borda esquerda */
+  color: #FFF;
+  font-family: "Bebas Neue";
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  z-index: 1000;   /* garante que fique acima dos outros elementos */
+}
+
+.mensagem-erro {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  display: none; /* Escondido por padrão */
+}
+
+.mensagem-erro.ativo {
+  display: block; /* Visível quando tem a classe 'ativo' */
+}
+
+.Voltar {
+    display: block;
+    background-image: url(BackTo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2.3125rem;
+    height: 1.9375rem;
+    flex-shrink: 0;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999999999;
+}
