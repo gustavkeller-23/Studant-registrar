@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Aluno</title>
+    <link rel="stylesheet" href="../css/TelaBemVindo.css">
+</head>
+
+<body>
+    <div class="ContainerCadastrarAluno">
+        <div class="Titulo">Excluir aluno</div>
+        <div class="Subttitulo">Informe o nome do aluno que deseja excluir</div>
+
+        <form id="formExcluirAluno">
+            <label for="queryExcluir">Nome do aluno</label>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <input id="queryExcluir" name="queryExcluir" type="text" placeholder="Digite o nome para buscar"
+                    required>
+                <button type="button" id="buscarExcluir">Buscar</button>
+            </div>
+            <input type="hidden" id="foundIdExcluir" name="foundIdExcluir" value="">
+            <div id="infoEncontrado" style="color:#006FB7; font-weight:600; margin-top:8px;"></div>
+
+            <div style="margin-top:12px; display:flex; gap:8px;">
+                <button type="submit" style="background:#d9534f; color:white;">Excluir</button>
+                <a href="bemVindoProf.html" class="botaoExcluirAluno">Voltar</a>
+            </div>
+        </form>
+    </div>
+
+    <script type="module" src="../JavaScript/excluirAluno.js"></script>
+</body>
+
+</html>

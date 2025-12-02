@@ -1,0 +1,601 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #006FB7;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.containerMatriculaAluno {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.RetanguloBrancoFundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 95%;
+    background-color: white;
+    border-radius: 2rem;
+    z-index: 1;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+    border: 7px solid #6E5AAF;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.conteudo::-webkit-scrollbar {
+    width: 8px;
+}
+
+.conteudo::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.conteudo::-webkit-scrollbar-thumb {
+    background: #6E5AAF;
+    border-radius: 4px;
+}
+
+.Titulo {
+    text-align: center;
+    color: #006FB7;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+.Subtitulo {
+    text-align: center;
+    color: #006FB7;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.uploadFotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.retanguloUpload {
+    width: 180px;
+    height: 130px;
+    background-color: #A2D55F;
+    border-radius: 1.3125rem;
+    border: 7px solid #6E5AAF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.retanguloUpload:hover {
+    transform: scale(1.05);
+    background-color: #92c54f;
+}
+
+#conteudoUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#conteudoUpload svg {
+    width: 50px;
+    height: 50px;
+}
+
+.escritaUpload {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.ContainerCamposCadastro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.formEntrar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.linha-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    width: 100%;
+    max-width: 850px;
+}
+
+.campo-input {
+    width: 100%;
+}
+
+.campo-input input,
+.campo-input select {
+    width: 100%;
+    height: 4.5rem;
+    border-radius: 1.3125rem;
+    border: 7px solid #6E5AAF;
+    background-color: #006FB7;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    appearance: none;
+    cursor: pointer;
+}
+
+.campo-input input::placeholder,
+.campo-input select option:first-child {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.campo-input input:focus,
+.campo-input select:focus {
+    outline: none;
+    transform: scale(1.02);
+    border-color: #A2D55F;
+}
+
+.campo-input select {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    padding-right: 3rem;
+}
+
+.campo-input select option {
+    background-color: #006FB7;
+    color: white;
+    padding: 0.5rem;
+}
+
+.campo-input input[type="date"] {
+    color: white;
+}
+
+.campo-input input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.botaoCadastrarAluno {
+    width: 14rem;
+    height: 3.5rem;
+    border-radius: 1.3125rem;
+    border: 7px solid #6E5AAF;
+    background-color: #A2D55F;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
+}
+
+.botaoCadastrarAluno:hover {
+    transform: scale(1.05);
+    background-color: #92c54f;
+}
+
+.mensagem-erro {
+    color: #ff4444;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    min-height: 1.2rem;
+}
+
+.SullivanDecoracao {
+    background-image: url('../assets/sulivanfita.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 21.75rem;
+    height: 36.25rem;
+    flex-shrink: 0;
+    aspect-ratio: 3/5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.MikeDecoracao {
+    background-image: url('../assets/mikeFita.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 27.75rem;
+    height: 49.8125rem;
+    max-height: 100vh;
+    flex-shrink: 0;
+    aspect-ratio: 492 / 797;
+    z-index: 9999;
+    pointer-events: none;
+    margin: 0;
+}
+
+.VoltarHome {
+    display: block;
+    background-image: url('../assets/HomePage.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2.3125rem;
+    height: 1.9375rem;
+    flex-shrink: 0;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999999999;
+}
+
+.Voltar {
+    display: block;
+    background-image: url('../assets/BackTo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 2.3125rem;
+    height: 1.9375rem;
+    flex-shrink: 0;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999999999;
+}
+
+/* Media Queries para Responsividade */
+
+/* Telas grandes (1200px - 1400px) */
+@media (max-width: 1400px) {
+    .SullivanDecoracao {
+        width: 19rem;
+        height: 31.67rem;
+    }
+
+    .MikeDecoracao {
+        width: 24rem;
+        height: 43.08rem;
+    }
+}
+
+/* Tablets e telas médias (768px - 1200px) */
+@media (max-width: 1200px) {
+    .SullivanDecoracao {
+        width: 16rem;
+        height: 26.67rem;
+    }
+
+    .MikeDecoracao {
+        width: 20rem;
+        height: 35.9rem;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 2rem;
+        height: 1.67rem;
+    }
+}
+
+/* Tablets pequenos (600px - 768px) */
+@media (max-width: 768px) {
+    .linha-inputs {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .Titulo {
+        font-size: 1.5rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.9rem;
+    }
+
+    .campo-input input,
+    .campo-input select {
+        font-size: 1rem;
+        height: 4rem;
+    }
+
+    .retanguloUpload {
+        width: 150px;
+        height: 110px;
+    }
+
+    .SullivanDecoracao {
+        width: 13rem;
+        height: 21.67rem;
+        opacity: 0.9;
+    }
+
+    .MikeDecoracao {
+        width: 16rem;
+        height: 28.72rem;
+        opacity: 0.9;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.8rem;
+        height: 1.5rem;
+        top: 15px;
+    }
+
+    .VoltarHome {
+        right: 15px;
+    }
+
+    .Voltar {
+        left: 15px;
+    }
+}
+
+/* Smartphones (480px - 600px) */
+@media (max-width: 600px) {
+    .Titulo {
+        font-size: 1.3rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.85rem;
+    }
+
+    .retanguloUpload {
+        width: 130px;
+        height: 95px;
+    }
+
+    #conteudoUpload svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .escritaUpload {
+        font-size: 0.8rem;
+    }
+
+    .campo-input input,
+    .campo-input select {
+        height: 3.8rem;
+        font-size: 0.95rem;
+        border: 6px solid #6E5AAF;
+    }
+
+    .botaoCadastrarAluno {
+        width: 12rem;
+        height: 3.2rem;
+        font-size: 1rem;
+        border: 6px solid #6E5AAF;
+    }
+
+    .SullivanDecoracao {
+        width: 10rem;
+        height: 16.67rem;
+        opacity: 0.85;
+    }
+
+    .MikeDecoracao {
+        width: 12rem;
+        height: 21.54rem;
+        opacity: 0.85;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.6rem;
+        height: 1.33rem;
+    }
+}
+
+/* Smartphones pequenos (menos de 480px) */
+@media (max-width: 480px) {
+    .Titulo {
+        font-size: 1.2rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.8rem;
+    }
+
+    .conteudo {
+        padding: 1.5rem 1rem;
+    }
+
+    .retanguloUpload {
+        width: 120px;
+        height: 88px;
+        border: 5px solid #6E5AAF;
+    }
+
+    #conteudoUpload svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .escritaUpload {
+        font-size: 0.75rem;
+    }
+
+    .campo-input input,
+    .campo-input select {
+        height: 3.5rem;
+        font-size: 0.9rem;
+        border: 5px solid #6E5AAF;
+    }
+
+    .botaoCadastrarAluno {
+        width: 11rem;
+        height: 3rem;
+        font-size: 0.95rem;
+        border: 5px solid #6E5AAF;
+    }
+
+    .SullivanDecoracao {
+        width: 8rem;
+        height: 13.33rem;
+        opacity: 0.8;
+    }
+
+    .MikeDecoracao {
+        width: 10rem;
+        height: 17.95rem;
+        opacity: 0.8;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.5rem;
+        height: 1.25rem;
+        top: 12px;
+    }
+
+    .VoltarHome {
+        right: 12px;
+    }
+
+    .Voltar {
+        left: 12px;
+    }
+}
+
+/* Smartphones muito pequenos (menos de 375px) */
+@media (max-width: 375px) {
+    .Titulo {
+        font-size: 1.1rem;
+    }
+
+    .Subtitulo {
+        font-size: 0.75rem;
+    }
+
+    .conteudo {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .retanguloUpload {
+        width: 110px;
+        height: 80px;
+        border: 4px solid #6E5AAF;
+    }
+
+    #conteudoUpload svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .escritaUpload {
+        font-size: 0.7rem;
+    }
+
+    .campo-input input,
+    .campo-input select {
+        height: 3.2rem;
+        font-size: 0.85rem;
+        border: 4px solid #6E5AAF;
+        padding: 0 1rem;
+    }
+
+    .campo-input input::placeholder,
+    .campo-input select option:first-child {
+        font-size: 0.85rem;
+    }
+
+    .botaoCadastrarAluno {
+        width: 10rem;
+        height: 2.8rem;
+        font-size: 0.9rem;
+        border: 4px solid #6E5AAF;
+    }
+
+    .SullivanDecoracao {
+        width: 6.5rem;
+        height: 10.83rem;
+        opacity: 0.75;
+    }
+
+    .MikeDecoracao {
+        width: 8rem;
+        height: 14.36rem;
+        opacity: 0.75;
+    }
+
+    .VoltarHome,
+    .Voltar {
+        width: 1.3rem;
+        height: 1.08rem;
+        top: 10px;
+    }
+
+    .VoltarHome {
+        right: 10px;
+    }
+
+    .Voltar {
+        left: 10px;
+    }
+
+    .linha-inputs {
+        gap: 0.8rem;
+    }
+
+    .formEntrar {
+        gap: 0.8rem;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Alunos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/buscaAluno.css">
+</head>
+
+<body>
+    <div class="containerBuscaAluno">
+        <div class="RetanguloBrancoFundo"></div>
+
+        <div class="conteudo">
+            <div class="Titulo">
+                BUSCA DE ALUNO(A)
+            </div>
+            <div class="Subtitulo">
+                Digite o nome do aluno que deseja buscar
+            </div>
+
+            <div class="containerBusca">
+                <!-- Campo de busca por nome -->
+                <div class="campoBusca">
+                    <input type="text" id="inputBusca" placeholder="Digite o nome do aluno que deseja buscar" />
+                    <button class="botaoBusca" id="btnBuscar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
+                            <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Seletor de Turno -->
+                <div class="campoFiltro">
+                    <select id="filtroTurno">
+                        <option value="">Turno</option>
+                        <option value="Integral">Integral</option>
+                        <option value="Noturno">Noturno</option>
+                        <option value="Matutino">Matutino</option>
+                    </select>
+                </div>
+
+                <!-- Seletor de Curso -->
+                <div class="campoFiltro">
+                    <select id="filtroCurso">
+                        <option value="">Curso</option>
+                        <option value="Bacharelado em Ciências do Susto">Bacharelado em Ciências do Susto</option>
+                        <option value="Engenharia do Terror Aplicado">Engenharia do Terror Aplicado</option>
+                        <option value="Inteligência Artificial para Aterrorização">Inteligência Artificial para
+                            Aterrorização</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Container para exibir os cards dos alunos -->
+            <div class="containerCards" id="containerCards">
+                <!-- Os cards serão inseridos aqui dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../JavaScript/buscaAluno.js"></script>
+    <div class="MikeDecoracao"></div>
+    <div class="SullivanDecoracao"></div>
+    <a href="../html/Home.html" class="VoltarHome"></a>
+    <a href="../html/bemVindoProf.html" class="Voltar"></a>
+</body>
+
+</html>
