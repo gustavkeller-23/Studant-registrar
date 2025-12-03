@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export function buscarPorNome(nome) {
-    return prisma.usuario.findUnique({ where: { nome } });
+    return prisma.usuario.findFirst({ where: { nome } });
 }
 
 export function criar(data) {
